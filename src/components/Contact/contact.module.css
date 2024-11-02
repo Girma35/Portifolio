@@ -1,0 +1,134 @@
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: stretch; 
+    padding: 100px 12%; 
+    z-index: 1;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
+    background-color: rgba(167, 167, 167, 0.5); 
+    position: relative;
+}
+
+.title {
+    text-align: center; 
+    font-size: 2.5rem;
+    color: #4A90E2;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #4A90E2;
+    margin: 8px auto 0; 
+    border-radius: 2px;
+}
+
+.container {
+    max-width: 100%;
+    width: 80%;
+    margin: 20px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: transparent; 
+    display: inline-block;
+    text-align: center; 
+    padding: 15px 32px; 
+    text-decoration: none; 
+    font-size: 16px; 
+    border: none; 
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s, transform 0.2s; 
+    width: 120px;  
+    margin: 20px 20px 0 0; /* Top and right margin for spacing */
+    cursor: pointer;
+    position: relative;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(198, 22, 22, 0.7);
+    border-radius: 50%;
+    z-index: -1;
+    clip-path: circle(40% at 100% 100%);
+    transition: .6s;
+}
+
+button:hover {
+    background-color: rgba(198, 22, 22, 0.7); 
+    transform: translateY(-2px);
+}
+
+button:hover::after {
+    clip-path: circle(120% at 100% 100%);
+}
+
+button:active {
+    transform: translateY(0); 
+}
+
+.input_box {
+    margin-bottom: 20px;
+}
+
+.input_box label {
+    display: block;
+    font-size: 1rem;
+    color: #333333;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.input_box input,
+.input_box textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333333;
+    transition: border-color 0.3s ease;
+}
+
+.input_box input:focus,
+.input_box textarea:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+.input_box textarea {
+    height: 100px;
+    width: 100%;
+    resize: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+}

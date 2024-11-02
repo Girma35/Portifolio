@@ -1,0 +1,219 @@
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 12%;
+    z-index: 1;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background-color: rgba(167, 167, 167, 0.5);
+}
+
+
+.title_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #4A90E2;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #4A90E2;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+.description {
+    font-size: 1.25rem;
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 15px;
+    max-width: 1000px;
+    padding: 20px;
+    border-left: 4px solid #4A90E2;
+    border-radius: 8px;
+}
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; 
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card p {
+    font-size: 1em;
+    color: #666;
+}
+.skillList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.skillList li {
+    display: flex;
+    align-items: center; 
+    background-color: transparent;
+    border-radius: 8px; 
+    padding: 8px 12px;
+    transition: background-color 0.3s, transform 0.3s, opacity 0.3s; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.skillList li:hover {
+    background-color: #e0e0e0; 
+    transform: translateY(-5px) scale(1.05); 
+    opacity: 0.9; 
+}
+
+.skillList img {
+    margin-right: 8px; 
+    transition: transform 0.3s; 
+}
+
+.skillList li:hover img {
+    transform: scale(1.2); 
+}
+.button {
+    background-color: transparent; 
+    display: inline-block;
+    text-align: center; 
+    align-items: center;
+    position: relative;
+    padding: 15px 32px; 
+    text-decoration: none; 
+    font-size: 16px; 
+    border: none; 
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s, transform 0.2s; 
+    border-radius: 50%;
+    width: 120px;  
+    margin-top: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    z-index: 1;
+    transition: .6s;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(198, 22, 22, 0.7);
+    border-radius: 50%;
+    z-index: -1;
+    clip-path: circle(40% at 100% 100%);
+    transition: .6s;
+}
+.button:hover {
+    background-color: rgba(198, 22, 22, 0.7); 
+    transform: translateY(-2px);
+}
+.button:hover::after {
+    clip-path: circle(120% at 100% 100%);
+}
+.button:active {
+    transform: translateY(0); 
+}
+@media (max-width: 768px) {
+    .section {
+        padding: 50px 5%;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .cardContainer {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0;
+        width: 100%;
+    }
+
+    .card {
+        width: auto;
+        margin: 0;
+    }
+
+    .button {
+        padding: 30px 20px;
+        font-size: 14px;
+        width: auto;
+    }
+
+    .skillList {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .skillList img {
+        max-width: 100%;  
+        height: auto;     
+    }
+}
